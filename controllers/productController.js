@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     // get token from request
     try {
         if (req.headers['authorization']) {
-            let token = req.headers['authorization'].replace('Bearer ', '');
+            let token = await req.headers['authorization'].replace('Bearer ', '');
             const userProfile = await userService.getAuthUser(token);
             console.log("%c user profile: ", 'color: blue', userProfile);
             console.log("%c user email: ", 'color: blue', userProfile.email);

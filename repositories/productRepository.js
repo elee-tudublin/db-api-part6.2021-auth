@@ -44,7 +44,7 @@ let getProducts = async () => {
 
         // first element of the recordset contains products
         products = result.recordset[0];
-        console.log(products);
+        // console.log(products);
 
         // Catch and log errors to cserver side console 
     } catch (err) {
