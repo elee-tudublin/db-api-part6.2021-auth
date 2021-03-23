@@ -6,3 +6,4 @@ obj/*
 config/Development.json
 config/Production.json
 config/db_config.json
+config/auth_config.json

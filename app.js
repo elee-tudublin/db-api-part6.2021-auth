@@ -44,6 +44,8 @@ app.use('/', require('./controllers/index'));
 app.use('/product', require('./controllers/productController'));
 // route to /category
 app.use('/category', require('./controllers/categoryController'));
+// route to /user
+app.use('/user', require('./controllers/userController'));
 
 
 // catch 404 and forward to error handler
