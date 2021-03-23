@@ -5,7 +5,7 @@ const productService = require('../services/productService.js');
 const userService = require('../services/userService.js');
 
 // Auth0
-const { authConfig, checkJwt, checkAuth, getUser } = require('../middleware/jwtAuth.js');
+const { authConfig, checkJwt, checkAuth } = require('../middleware/jwtAuth.js');
 
 // check auth for all routes in this controller
 //router.use(checkJwt);
