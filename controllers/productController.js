@@ -19,16 +19,16 @@ router.get('/', async (req, res) => {
     // Get info from user profile
     // if logged in (therefore access token exists)
     // get token from request
-    try {
-        if (req.headers['authorization']) {
+    if (req.headers['authorization']) {
+        try {
+
             let token = await req.headers['authorization'].replace('Bearer ', '');
             const userProfile = await userService.getAuthUser(token);
             console.log("%c user profile: ", 'color: blue', userProfile);
             console.log("%c user email: ", 'color: blue', userProfile.email);
+        } catch (err) {
+            console.log(`ERROR getting user profile: ${err.message}`);
         }
-
-    }catch(err) {
-        console.log(`ERROR getting user profile: ${err.message}`);
     }
 
     // Get products
@@ -94,7 +94,7 @@ router.get('/bycat/:id', async (req, res) => {
 
 // POST - Insert a new product.
 // This async function sends a HTTP POST request
-router.post('/',  checkJwt, checkAuth([authConfig.create]), async (req, res) => {
+router.post('/', checkJwt, checkAuth([authConfig.create]), async (req, res) => {
 
     // the request body contains the new product values - copy it
     const newProduct = req.body;
