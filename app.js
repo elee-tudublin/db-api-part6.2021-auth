@@ -4,7 +4,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 // Specify Host and port
-const HOST = '127.0.0.1';
+// 0.0.0.0 - all valaible interfaces
+const HOST = '0.0.0.0';
 const PORT = 8080;
 
 // app is a new instance of express (the web app framework)
